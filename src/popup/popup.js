@@ -40,7 +40,15 @@
                     index: entry[1],
                     type: event.target.dataset.canvasType,
                 });
-                zip.file(`canvas_${counter}.` + event.target.dataset.canvasType.substring(6), dataURL.split('base64,')[1],{base64: true});
+
+                // --- ИЗМЕНЕНИЕ НАЧИНАЕТСЯ ЗДЕСЬ ---
+                // Формируем имя файла: 001.ext, 002.ext и т.д.
+                let ext = event.target.dataset.canvasType.substring(6); // получаем расширение (png, jpeg...)
+                let fileName = String(counter).padStart(3, '0') + "." + ext;
+                
+                zip.file(fileName, dataURL.split('base64,')[1],{base64: true});
+                // --- ИЗМЕНЕНИЕ ЗАКОНЧИЛОСЬ ---
+
                 counter++;
             }
             let content = await zip.generateAsync({type:"blob"});
