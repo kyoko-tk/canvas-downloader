@@ -33,6 +33,8 @@
                 // Use all items
                 entries = event.target.dataset.canvasData.split(';;;').map(entry => entry.split('|||'));
             }
+
+            let padLength = String(entries.length).length;
             
             for (let entry of entries){
                 let dataURL = await getCanvasContent( {
@@ -41,13 +43,11 @@
                     type: event.target.dataset.canvasType,
                 });
 
-                // --- ИЗМЕНЕНИЕ НАЧИНАЕТСЯ ЗДЕСЬ ---
-                // Формируем имя файла: 001.ext, 002.ext и т.д.
-                let ext = event.target.dataset.canvasType.substring(6); // получаем расширение (png, jpeg...)
-                let fileName = String(counter).padStart(3, '0') + "." + ext;
+                // Формирование имени файла
+                let ext = event.target.dataset.canvasType.substring(6);
+                let fileName = String(counter).padStart(padLength, '0') + "." + ext;
                 
                 zip.file(fileName, dataURL.split('base64,')[1],{base64: true});
-                // --- ИЗМЕНЕНИЕ ЗАКОНЧИЛОСЬ ---
 
                 counter++;
             }
