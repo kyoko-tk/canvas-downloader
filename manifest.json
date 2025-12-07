@@ -4,7 +4,7 @@
   "version": "1.3.1",
   "manifest_version": 3,
   "description": "Extension helps detect if canvas is used at the web page and allows to export and save canvas content (Files: 001, 002...)",
-  "homepage_url": "https://github.com/santriseus/canvas-downloader",
+  "homepage_url": "https://github.com/kyoko-tk/canvas-downloader",
   "icons": {
     "16": "icons/icon16.png",
     "48": "icons/icon48.png",
