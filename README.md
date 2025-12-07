@@ -6,11 +6,10 @@
 
 ### ⚡ Key Difference in this version
 The main change in this fork is the **file naming convention** inside the downloaded ZIP archive.
-Instead of `canvas_1.png`, `canvas_2.png`, files are saved as a clean numbered sequence with leading zeros:
-*   **`001.png`**
-*   **`002.png`**
-*   **`003.png`**
-*   ...
+Files are saved as a clean numbered sequence with dynamic padding based on the total number of files:
+*   **`01.png`**, **`02.png`** (if < 100 images)
+*   **`001.png`**, **`002.png`** (if < 1000 images)
+*   and so on...
 
 This makes it easier to sort and process sequences of images (frames).
 
@@ -36,11 +35,10 @@ Since this is a custom fork, you need to install it manually:
 
 ### ⚡ Главное отличие этой версии
 Основное изменение в этом форке касается **именования файлов** внутри скачиваемого ZIP-архива.
-Вместо стандартных имен вида `canvas_1.png`, `canvas_2.png`, файлы сохраняются с удобной нумерацией и ведущими нулями:
-*   **`001.png`**
-*   **`002.png`**
-*   **`003.png`**
-*   ...
+Файлы сохраняются с удобной нумерацией и динамическим добавлением ведущих нулей в зависимости от общего количества изображений:
+*   **`01.png`**, **`02.png`** (если меньше 100 изображений)
+*   **`001.png`**, **`002.png`** (если меньше 1000 изображений)
+*   и так далее...
 
 Это значительно упрощает сортировку и дальнейшую обработку последовательностей изображений (кадров).
 
